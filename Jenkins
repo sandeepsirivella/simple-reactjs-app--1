@@ -1,19 +1,19 @@
 pipeline {
   agent any
   stages{
-    stage(checkout SCM){
+    stage('checkout SCM'){
       steps{
         git branch:'master' , url:'https://github.com/sandeepsirivella/simple-reactjs-app--1.git'
       }
     }
-    stage(build){
+    stage('build'){
       steps{
         sh 'npm install'
         sh 'npm run build'
       }
     }
-    stage(deply){
-      step{
+    stage('depoly'){
+      steps{
         sh """
           docker build -t mass:1 .
           docker run -it -p  6065:80 mass:1
