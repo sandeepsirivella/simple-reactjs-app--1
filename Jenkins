@@ -3,7 +3,7 @@ pipeline {
   stages{
     stage(checkout SCM){
       steps{
-        git branch:"master" , url:"https://github.com/sandeepsirivella/simple-reactjs-app--1.git"
+        git branch:'master' , url:'https://github.com/sandeepsirivella/simple-reactjs-app--1.git'
       }
     }
     stage(build){
